@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="#17291e" name="theme-color"/>
+  <title>
+   &Ecy;&Kcy;&Ocy; &Dcy;&iecy;&rcy;&iecy;&vcy;&ncy;&yacy; &mdash; &pcy;&rcy;&iecy;&zcy;&iecy;&ncy;&tcy;&acy;&tscy;&icy;&yacy;
+  </title>
+  <style>
+   :root {
+  --bg:#14251b;
+  --cream:#f1eddf;
+  --gold:#d8c18a;
+  --sage:#a9bd99
+}
+* {
+  box-sizing:border-box
+}
+html {
+  scroll-snap-type:y mandatory;
+  scroll-behavior:smooth
+}
+body {
+  margin:0;
+  background:var(--bg);
+  color:#fffdf5;
+  font-family:Inter,
+Arial,
+sans-serif
+}
+section {
+  min-height:100svh;
+  scroll-snap-align:start;
+  scroll-snap-stop:always;
+  padding:7vh 9vw;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  overflow:hidden
+}
+h1 {
+  font-size:clamp(4rem,10vw,9rem);
+  line-height:.85;
+  letter-spacing:-.07em;
+  margin:12px 0 28px
+}
+h2 {
+  font-size:clamp(2.6rem,6vw,6rem);
+  line-height:.94;
+  letter-spacing:-.055em;
+  margin:10px 0 22px
+}
+h3 {
+  font-size:1.35rem;
+  margin:10px 0
+}
+p {
+  max-width:680px;
+  line-height:1.7;
+  color:#d4dccf;
+  font-size:clamp(1rem,1.4vw,1.2rem)
+}
+.serif {
+  font:italic 400 1em Georgia,
+serif
+}
+.eyebrow {
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  font-size:.72rem;
+  color:var(--gold);
+  font-weight:bold
+}
+.count {
+  position:absolute;
+  top:26px;
+  right:9vw;
+  color:#b6c2b2;
+  font-size:.75rem;
+  letter-spacing:.15em
+}
+.foot {
+  position:absolute;
+  bottom:20px;
+  left:9vw;
+  font-size:.7rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#9fae9d
+}
+.hero {
+  background:radial-gradient(ellipse at 80% 40%,
+#537450 0,
+transparent 27%),
+linear-gradient(120deg,
+#203d2a,
+#101c15)
+}
+.hero .lead {
+  font-size:clamp(1.2rem,2vw,1.5rem);
+  max-width:620px
+}
+.actions {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:22px
+}
+.btn {
+  padding:13px 20px;
+  border:1px solid #899b86;
+  border-radius:50px;
+  color:inherit;
+  text-decoration:none;
+  background:#ffffff0d;
+  cursor:pointer
+}
+.btn.gold {
+  background:var(--gold);
+  color:#1a291d;
+  border-color:var(--gold);
+  font-weight:bold
+}
+.light {
+  background:var(--cream);
+  color:#203528
+}
+.light p {
+  color:#536354
+}
+.light .eyebrow {
+  color:#748a67
+}
+.grid2 {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:5vw;
+  align-items:center
+}
+.visual {
+  height:44vh;
+  min-height:260px;
+  border-radius:8px;
+  background:radial-gradient(ellipse at 50% 30%,
+#c4d6a1,
+transparent 30%),
+linear-gradient(160deg,
+#91ac7a,
+#315c40 55%,
+#183524);
+  position:relative;
+  overflow:hidden
+}
+.visual:after {
+  content:"";
+  position:absolute;
+  inset:45% 0 0;
+  background:linear-gradient(transparent,
+#102519b8)
+}
+.visual label {
+  position:absolute;
+  z-index:1;
+  bottom:20px;
+  left:20px;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-size:.75rem
+}
+.stats {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:24px
+}
+.stat {
+  border-top:1px solid #80927c;
+  padding-top:15px
+}
+.stat b {
+  display:block;
+  font-size:1.6rem;
+  margin-bottom:8px
+}
+.stat span {
+  font-size:.92rem;
+  color:#627064;
+  line-height:1.5
+}
+.video {
+  background:#101a14
+}
+.video-box {
+  height:min(58vh,650px);
+  min-height:280px;
+  background:#1c3324;
+  border-radius:9px;
+  overflow:hidden;
+  position:relative;
+  border:1px solid #ffffff30
+}
+.video-box video {
+  width:100%;
+  height:100%;
+  object-fit:cover
+}
+.placeholder {
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-content:center;
+  text-align:center;
+  padding:20px;
+  background:linear-gradient(135deg,
+#294a32,
+#111e15);
+  color:#dce6d8;
+  pointer-events:none
+}
+.placeholder strong {
+  display:block;
+  margin-bottom:8px
+}
+.video-box video:not([data-missing="true"]) {
+  position:relative
+}
+.note {
+  font-size:.8rem;
+  color:#a7b3a4
+}
+.market {
+  background:linear-gradient(130deg,
+#29442f,
+#14251b)
+}
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-top:22px
+}
+.card {
+  padding:24px;
+  border:1px solid #ffffff35;
+  border-radius:7px;
+  background:#ffffff08;
+  min-height:215px
+}
+.card .symbol {
+  font-size:1.7rem;
+  color:var(--gold)
+}
+.card p {
+  font-size:.95rem
+}
+.pond {
+  background:linear-gradient(120deg,
+#153e35,
+#14271e)
+}
+.pond-art {
+  height:42vh;
+  min-height:270px;
+  border-radius:8px;
+  background:radial-gradient(ellipse at 50% 52%,
+#a2c8b8 0,
+#5b9688 23%,
+#2b6659 43%,
+#1d4435 68%);
+  position:relative
+}
+.pond-art:before,
+.pond-art:after {
+  content:"";
+  position:absolute;
+  left:12%;
+  top:32%;
+  width:76%;
+  height:42%;
+  border:1px solid #e1edce88;
+  border-radius:50%;
+  transform:rotate(-12deg)
+}
+.pond-art:after {
+  left:24%;
+  top:40%;
+  width:52%;
+  height:25%;
+  border-color:#e1edce55
+}
+.pond-art span {
+  position:absolute;
+  bottom:20px;
+  left:20px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  font-size:.75rem
+}
+.walk {
+  background:#dce5d2;
+  color:#1b3324
+}
+.walk p {
+  color:#536354
+}
+.model {
+  background:#101e15
+}
+.modelgrid {
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:4vw;
+  align-items:center
+}
+.stage {
+  height:55vh;
+  min-height:340px;
+  position:relative;
+  overflow:hidden;
+  border:1px solid #ffffff30;
+  border-radius:9px;
+  background:radial-gradient(ellipse,
+#3d6547,
+#162b1e 70%);
+  cursor:grab;
+  touch-action:pan-y
+}
+.hint {
+  position:absolute;
+  top:16px;
+  left:18px;
+  z-index:2;
+  color:#cbd6c6;
+  font-size:.72rem;
+  letter-spacing:.12em;
+  text-transform:uppercase
+}
+.village {
+  position:absolute;
+  left:50%;
+  top:54%;
+  width:360px;
+  height:260px;
+  transform:translate(-50%,-50%) rotateX(58deg) rotateZ(-35deg);
+  transform-style:preserve-3d
+}
+.land {
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,
+#79925f,
+#3e6c47);
+  border:2px solid #a2b786;
+  box-shadow:0 30px 30px #0005
+}
+.road {
+  position:absolute;
+  top:49%;
+  left:0;
+  width:100%;
+  height:15px;
+  background:#d4c7a2;
+  transform:translateZ(3px)
+}
+.road.v {
+  top:0;
+  left:50%;
+  height:100%;
+  width:15px
+}
+.house {
+  position:absolute;
+  width:48px;
+  height:40px;
+  background:#e6d8b5;
+  transform:translateZ(15px);
+  box-shadow:8px 7px #29432d
+}
+.house:before {
+  content:"";
+  position:absolute;
+  top:-18px;
+  left:-6px;
+  width:60px;
+  height:25px;
+  background:#76513a;
+  clip-path:polygon(50% 0,100% 100%,0 100%)
+}
+.a {
+  left:30px;
+  top:25px
+}
+.b {
+  left:130px;
+  top:25px
+}
+.c {
+  left:245px;
+  top:28px
+}
+.d {
+  left:55px;
+  top:175px
+}
+.e {
+  left:180px;
+  top:180px
+}
+.f {
+  left:280px;
+  top:160px
+}
+.tree {
+  position:absolute;
+  width:17px;
+  height:17px;
+  border-radius:50%;
+  background:#9cbd78;
+  box-shadow:0 0 0 7px #527b4c;
+  transform:translateZ(20px)
+}
+.t1 {
+  left:18px;
+  top:120px
+}
+.t2 {
+  left:110px;
+  top:110px
+}
+.t3 {
+  left:230px;
+  top:120px
+}
+.t4 {
+  left:330px;
+  top:100px
+}
+.t5 {
+  left:140px;
+  top:235px
+}
+.water {
+  position:absolute;
+  left:120px;
+  top:100px;
+  width:115px;
+  height:48px;
+  background:#75aaa0;
+  border:4px solid #d0d9ad;
+  border-radius:50%;
+  transform:translateZ(5px)
+}
+.controls {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:14px
+}
+.contact {
+  background:var(--cream);
+  color:#1b3324
+}
+.contact p {
+  color:#526354
+}
+#dots {
+  position:fixed;
+  right:22px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:10;
+  display:flex;
+  flex-direction:column;
+  gap:12px
+}
+#dots button {
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  padding:0;
+  border:1px solid #ffffffaa;
+  background:transparent;
+  cursor:pointer
+}
+#dots button.active {
+  background:var(--gold);
+  border-color:var(--gold);
+  transform:scale(1.35)
+}
+#arrows {
+  position:fixed;
+  right:12px;
+  bottom:18px;
+  z-index:10;
+  display:flex;
+  flex-direction:column;
+  gap:8px
+}
+#arrows button {
+  border:1px solid #ffffff80;
+  border-radius:50%;
+  width:34px;
+  height:34px;
+  background:#101c15aa;
+  color:white;
+  cursor:pointer
+}
+@media(max-width:760px) {
+  .video-portrait {
+    width:min(72vw, 300px);
+    height:min(52vh, 480px);
+    min-height:240px;
+  }
+  section {
+  padding:65px 24px 55px
+}
+.grid2,
+.modelgrid {
+  grid-template-columns:1fr;
+  gap:24px
+}
+.visual {
+  height:30vh
+}
+.cards {
+  grid-template-columns:1fr
+}
+.card {
+  min-height:0;
+  padding:18px
+}
+.card p {
+  margin-bottom:0
+}
+.stats {
+  grid-template-columns:1fr;
+  gap:10px
+}
+.stat {
+  padding-top:10px
+}
+.stage {
+  height:42vh;
+  min-height:300px
+}
+.village {
+  transform:translate(-50%,-50%) scale(.78) rotateX(58deg) rotateZ(-35deg)
+}
+.foot {
+  left:24px;
+  bottom:15px
+}
+.count {
+  right:24px
+}
+#dots {
+  right:9px;
+  gap:10px
+}
+#dots button {
+  width:7px;
+  height:7px
+}
+
+}
+/* 3D-карта — главный элемент презентации */
+.model {
+  padding: 2.5vh 3vw 2vh;
+}
+.model .modelgrid {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.2vh;
+  height: 100%;
+}
+.model .modelgrid > div:first-child {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.5vw;
+  align-items: center;
+}
+.model .modelgrid > div:first-child .eyebrow {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+.model .modelgrid h2 {
+  font-size: clamp(1.7rem, 3vw, 3rem);
+  margin: 0;
+}
+.model .modelgrid p {
+  font-size: .88rem;
+  line-height: 1.35;
+  margin: 0;
+}
+.model .modelgrid .controls {
+  margin: 0;
+}
+.model .modelgrid .note {
+  display: none;
+}
+.model .stage {
+  width: 100%;
+  height: 72svh;
+  min-height: 400px;
+  max-height: none;
+  flex: 1;
+}
+.model .village {
+  transform: translate(-50%, -50%) scale(1.25) rotateX(58deg) rotateZ(-35deg);
+}
+.model .foot {
+  bottom: 8px;
+  left: 3vw;
+}
+@media (max-width: 760px) {
+  .model {
+  padding: 48px 16px 36px;
+}
+.model .modelgrid > div:first-child {
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+.model .modelgrid h2 {
+  font-size: 2rem;
+}
+.model .modelgrid p {
+  font-size: .82rem;
+}
+.model .stage {
+  height: 72svh;
+  min-height: 340px;
+}
+.model .village {
+  transform: translate(-50%, -50%) scale(.9) rotateX(58deg) rotateZ(-35deg);
+}
+.model .foot {
+  display: none;
+}
+
+}
+
+/* Premium motion layer: reveal, stagger, hover and restrained parallax */
+html { scroll-padding-top: 18px; }
+.btn, .card, .visual, .video-box, #dots button, #arrows button {
+  transition: transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s ease,
+              background-color .3s ease, border-color .3s ease, opacity .3s ease;
+}
+.btn { will-change: transform; }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 12px 28px #0002; }
+.btn:active { transform: translateY(-1px) scale(.985); }
+.card { transform: translateZ(0); }
+.card:hover { transform: translateY(-7px); border-color: #d8c18a99; box-shadow: 0 18px 38px #0002; }
+.visual:hover, .video-box:hover { box-shadow: 0 18px 42px #0002; }
+.video-box video { transition: transform .9s cubic-bezier(.2,.7,.2,1); }
+.video-box:hover video { transform: scale(1.035); }
+#dots button:hover, #arrows button:hover { transform: scale(1.2); }
+html.motion-ready .reveal {
+  opacity: 0;
+  transform: translate3d(0, 26px, 0);
+  transition: opacity .75s ease, transform .85s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+html.motion-ready .reveal.is-visible { opacity: 1; transform: translate3d(0,0,0); }
+html.motion-ready .hero .hero-intro {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  animation: heroEnter .9s cubic-bezier(.2,.7,.2,1) forwards;
+  animation-delay: var(--intro-delay, 0ms);
+}
+@keyframes heroEnter { to { opacity:1; transform:translate3d(0,0,0); } }
+.visual, .video-box { --parallax-y: 0px; }
+.visual { transform: translate3d(0, var(--parallax-y), 0); }
+.video-box video { transform: translate3d(0, var(--parallax-y), 0) scale(1.04); }
+.video-box:hover video { transform: translate3d(0, var(--parallax-y), 0) scale(1.075); }
+@media (max-width:760px) {
+  .card:hover, .btn:hover, .visual:hover, .video-box:hover { transform: none; box-shadow: none; }
+  .video-box video { transform: none; }
+  .video-box:hover video { transform: none; }
+  html.motion-ready .reveal { transform: translate3d(0,18px,0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  html { scroll-snap-type: y proximity; }
+  html.motion-ready .reveal, html.motion-ready .hero .hero-intro { opacity:1 !important; transform:none !important; animation:none !important; }
+  .visual, .video-box video { transform:none !important; }
+}
+
+  </style>
+ </head>
+ <body>
+  <nav aria-label="&Ncy;&acy;&vcy;&icy;&gcy;&acy;&tscy;&icy;&yacy; &pcy;&ocy; &rcy;&acy;&zcy;&dcy;&iecy;&lcy;&acy;&mcy;" id="dots">
+  </nav>
+  <div id="arrows">
+   <button aria-label="&Vcy;&vcy;&iecy;&rcy;&khcy;" id="up">
+    &uarr;
+   </button>
+   <button aria-label="&Vcy;&ncy;&icy;&zcy;" id="down">
+    &darr;
+   </button>
+  </div>
+  <section class="hero" data-title="&Gcy;&lcy;&acy;&vcy;&ncy;&acy;&yacy;" id="home">
+   <div class="count">
+    01 / 06
+   </div>
+   <div class="eyebrow">
+    &Pcy;&rcy;&ocy;&scy;&tcy;&rcy;&acy;&ncy;&scy;&tcy;&vcy;&ocy; &iecy;&scy;&tcy;&iecy;&scy;&tcy;&vcy;&iecy;&ncy;&ncy;&ocy;&jcy; &zhcy;&icy;&zcy;&ncy;&icy;
+   </div>
+   <h1>
+    &Ecy;&Kcy;&Ocy;
+    <br/>
+    <span class="serif">
+     &Dcy;&iecy;&rcy;&iecy;&vcy;&ncy;&yacy;
+    </span>
+   </h1>
+   <p class="lead">
+    &Scy;&vcy;&ocy;&icy; &pcy;&rcy;&ocy;&dcy;&ucy;&kcy;&tcy;&ycy;. &Pcy;&rcy;&ocy;&scy;&tcy;&ocy;&rcy; &pcy;&rcy;&icy;&rcy;&ocy;&dcy;&ycy;. &Scy;&pcy;&ocy;&kcy;&ocy;&jcy;&ncy;&ycy;&jcy; &rcy;&icy;&tcy;&mcy; &zhcy;&icy;&zcy;&ncy;&icy; &mdash; &mcy;&iecy;&scy;&tcy;&ocy;, &gcy;&dcy;&iecy; &vcy;&acy;&zhcy;&ncy;&ocy;&iecy; &rcy;&yacy;&dcy;&ocy;&mcy; &icy; &rcy;&acy;&scy;&tcy;&iocy;&tcy; &icy;&zcy; &zcy;&iecy;&mcy;&lcy;&icy;.
+   </p>
+   <div class="actions">
+    <a class="btn gold" href="#model">
+     &Icy;&scy;&scy;&lcy;&iecy;&dcy;&ocy;&vcy;&acy;&tcy;&softcy; &tcy;&iecy;&rcy;&rcy;&icy;&tcy;&ocy;&rcy;&icy;&yucy; &nearrow;
+    </a>
+    <a class="btn" href="#concept">
+     &Ocy;&tcy;&kcy;&rcy;&ycy;&tcy;&softcy; &kcy;&ocy;&ncy;&tscy;&iecy;&pcy;&tscy;&icy;&yucy;
+    </a>
+   </div>
+   <div class="foot">
+    &Ecy;&Kcy;&Ocy; &Dcy;&iecy;&rcy;&iecy;&vcy;&ncy;&yacy; &middot; &Pcy;&rcy;&iecy;&zcy;&iecy;&ncy;&tcy;&acy;&tscy;&icy;&yacy; &pcy;&rcy;&ocy;&iecy;&kcy;&tcy;&acy;
+   </div>
+  </section>
+  <section class="light" data-title="&Kcy;&ocy;&ncy;&tscy;&iecy;&pcy;&tscy;&icy;&yacy;" id="concept">
+   <div class="count">
+    02 / 06
+   </div>
+   <div class="grid2">
+    <div>
+     <div class="eyebrow">
+      &Ncy;&iecy; &pcy;&rcy;&ocy;&scy;&tcy;&ocy; &mcy;&iecy;&scy;&tcy;&ocy; &mdash; &scy;&vcy;&ocy;&jcy; &ucy;&kcy;&lcy;&acy;&dcy;
+     </div>
+     <h2>
+      &Bcy;&ocy;&lcy;&softcy;&shcy;&iecy; &pcy;&rcy;&icy;&rcy;&ocy;&dcy;&ycy;.
+      <br/>
+      <span class="serif">
+       &Bcy;&ocy;&lcy;&softcy;&shcy;&iecy; &scy;&vcy;&ocy;&iecy;&gcy;&ocy;.
+      </span>
+     </h2>
+     <p>
+      &Ecy;&Kcy;&Ocy; &Dcy;&iecy;&rcy;&iecy;&vcy;&ncy;&yacy; &ocy;&bcy;&hardcy;&iecy;&dcy;&icy;&ncy;&yacy;&iecy;&tcy; &ncy;&acy;&tcy;&ucy;&rcy;&acy;&lcy;&softcy;&ncy;&ycy;&iecy; &pcy;&rcy;&ocy;&dcy;&ucy;&kcy;&tcy;&ycy;, &lcy;&ocy;&kcy;&acy;&lcy;&softcy;&ncy;&ucy;&yucy; &tcy;&ocy;&rcy;&gcy;&ocy;&vcy;&lcy;&yucy;, &gcy;&acy;&scy;&tcy;&rcy;&ocy;&ncy;&ocy;&mcy;&icy;&yucy; &icy; &pcy;&rcy;&icy;&rcy;&ocy;&dcy;&ncy;&ocy;&iecy; &pcy;&rcy;&ocy;&scy;&tcy;&rcy;&acy;&ncy;&scy;&tcy;&vcy;&ocy;. &Zcy;&dcy;&iecy;&scy;&softcy; &mcy;&ocy;&zhcy;&ncy;&ocy; &zcy;&acy;&mcy;&iecy;&dcy;&lcy;&icy;&tcy;&softcy;&scy;&yacy;, &gcy;&ucy;&lcy;&yacy;&tcy;&softcy; &pcy;&ocy; &bcy;&ocy;&lcy;&softcy;&shcy;&ocy;&jcy; &tcy;&iecy;&rcy;&rcy;&icy;&tcy;&ocy;&rcy;&icy;&icy; &icy; &ocy;&tcy;&kcy;&rcy;&ycy;&vcy;&acy;&tcy;&softcy; &vcy;&kcy;&ucy;&scy; &pcy;&rcy;&ocy;&dcy;&ucy;&kcy;&tcy;&ocy;&vcy;, &scy;&ocy;&zcy;&dcy;&acy;&ncy;&ncy;&ycy;&khcy; &rcy;&yacy;&dcy;&ocy;&mcy;.
+     </p>
+     <div class="stats">
+      <div class="stat">
+       <b>
+        &Scy;&vcy;&ocy;&iocy;
+       </b>
+       <span>
+        &Lcy;&ocy;&kcy;&acy;&lcy;&softcy;&ncy;&ycy;&iecy; &pcy;&rcy;&ocy;&dcy;&ucy;&kcy;&tcy;&ycy; &icy; &pcy;&rcy;&ocy;&icy;&zcy;&vcy;&ocy;&dcy;&scy;&tcy;&vcy;&ocy;
+       </span>
+      </div>
+      <div class="stat">
+       <b>
+        &Pcy;&rcy;&ocy;&scy;&tcy;&ocy;&rcy;
+       </b>
+       <span>
+        &Mcy;&acy;&rcy;&shcy;&rcy;&ucy;&tcy;&ycy; &dcy;&lcy;&yacy; &dcy;&ocy;&lcy;&gcy;&icy;&khcy; &pcy;&rcy;&ocy;&gcy;&ucy;&lcy;&ocy;&kcy;
+       </span>
+      </div>
+      <div class="stat">
+       <b>
+        &Bcy;&acy;&lcy;&acy;&ncy;&scy;
+       </b>
+       <span>
+        &Kcy;&rcy;&acy;&scy;&icy;&vcy;&ocy;&iecy; &icy; &scy;&pcy;&ocy;&kcy;&ocy;&jcy;&ncy;&ocy;&iecy; &ocy;&kcy;&rcy;&ucy;&zhcy;&iecy;&ncy;&icy;&iecy;
+       </span>
+      </div>
+     </div>
+    </div>
+    <div class="video-box video-portrait">
+     <video autoplay muted loop playsinline controls preload="metadata" aria-label="Видео ЭКО Деревня — концепция">
+      <source src="video2.mp4" type="video/mp4">
+      Ваш браузер не поддерживает воспроизведение видео.
+     </video>
+     <div class="placeholder"><strong>Видео концепции</strong>Проверьте, что файл video1.mp4 загружен рядом с index.html.</div>
+    </div>
+   </div>
+   <div class="foot">
+    &Ecy;&Kcy;&Ocy; &Dcy;&iecy;&rcy;&iecy;&vcy;&ncy;&yacy; &middot; &Kcy;&ocy;&ncy;&tscy;&iecy;&pcy;&tscy;&icy;&yacy;
+   </div>
+  </section>
+  <section class="market" data-title="&Pcy;&rcy;&ocy;&dcy;&ucy;&kcy;&tcy;&ycy;" id="food">
+   <div class="count">
+    03 / 06
+   </div>
+   <div class="eyebrow">
+    &Ocy;&tcy; &zcy;&iecy;&mcy;&lcy;&icy; &icy; &vcy;&ocy;&dcy;&ycy; &mdash; &kcy; &scy;&tcy;&ocy;&lcy;&ucy;
+   </div>
+   <h2>
+    &Scy;&vcy;&ocy;&jcy; &pcy;&rcy;&ocy;&dcy;&ucy;&kcy;&tcy;.
+    <br/>
+    <span class="serif">
+     &Ncy;&acy;&scy;&tcy;&ocy;&yacy;&shchcy;&icy;&jcy; &vcy;&kcy;&ucy;&scy;.
+    </span>
+   </h2>
+   <p>
+    &Lcy;&ocy;&kcy;&acy;&lcy;&softcy;&ncy;&ocy;&iecy; &pcy;&rcy;&ocy;&icy;&zcy;&vcy;&ocy;&dcy;&scy;&tcy;&vcy;&ocy; &scy;&tcy;&acy;&ncy;&ocy;&vcy;&icy;&tcy;&scy;&yacy; &chcy;&acy;&scy;&tcy;&softcy;&yucy; &vcy;&pcy;&iecy;&chcy;&acy;&tcy;&lcy;&iecy;&ncy;&icy;&yacy;: &scy;&vcy;&iecy;&zhcy;&icy;&iecy; &pcy;&rcy;&ocy;&dcy;&ucy;&kcy;&tcy;&ycy;, &pcy;&ocy;&ncy;&yacy;&tcy;&ncy;&ocy;&iecy; &pcy;&rcy;&ocy;&icy;&scy;&khcy;&ocy;&zhcy;&dcy;&iecy;&ncy;&icy;&iecy; &icy; &gcy;&acy;&scy;&tcy;&rcy;&ocy;&ncy;&ocy;&mcy;&icy;&yacy; &scy; &khcy;&acy;&rcy;&acy;&kcy;&tcy;&iecy;&rcy;&ocy;&mcy;.
+   </p>
+   <div class="cards">
+    <article class="card">
+     <div class="symbol">
+      ♨
+     </div>
+     <h3>
+      &Rcy;&iecy;&scy;&tcy;&ocy;&rcy;&acy;&ncy;&chcy;&icy;&kcy;&icy;
+     </h3>
+     <p>
+      &Ucy;&yucy;&tcy;&ncy;&ycy;&iecy; &mcy;&iecy;&scy;&tcy;&acy;, &gcy;&dcy;&iecy; &mcy;&ocy;&zhcy;&ncy;&ocy; &pcy;&ocy;&pcy;&rcy;&ocy;&bcy;&ocy;&vcy;&acy;&tcy;&softcy; &bcy;&lcy;&yucy;&dcy;&acy; &icy;&zcy; &lcy;&ocy;&kcy;&acy;&lcy;&softcy;&ncy;&ycy;&khcy; &pcy;&rcy;&ocy;&dcy;&ucy;&kcy;&tcy;&ocy;&vcy; &icy; &pcy;&rcy;&ocy;&vcy;&iecy;&scy;&tcy;&icy; &vcy;&rcy;&iecy;&mcy;&yacy; &bcy;&iecy;&zcy; &scy;&pcy;&iecy;&shcy;&kcy;&icy;.
+     </p>
+    </article>
+    <article class="card">
+     <div class="symbol">
+      ✳
+     </div>
+     <h3>
+      &Mcy;&yacy;&scy;&ncy;&acy;&yacy; &lcy;&acy;&vcy;&kcy;&acy;
+     </h3>
+     <p>
+      &Pcy;&rcy;&ocy;&scy;&tcy;&rcy;&acy;&ncy;&scy;&tcy;&vcy;&ocy; &dcy;&lcy;&yacy; &mcy;&yacy;&scy;&ncy;&ocy;&jcy; &pcy;&rcy;&ocy;&dcy;&ucy;&kcy;&tscy;&icy;&icy; &scy; &acy;&kcy;&tscy;&iecy;&ncy;&tcy;&ocy;&mcy; &ncy;&acy; &kcy;&acy;&chcy;&iecy;&scy;&tcy;&vcy;&ocy;, &scy;&vcy;&iecy;&zhcy;&iecy;&scy;&tcy;&softcy; &icy; &mcy;&iecy;&scy;&tcy;&ncy;&ocy;&iecy; &pcy;&rcy;&ocy;&icy;&scy;&khcy;&ocy;&zhcy;&dcy;&iecy;&ncy;&icy;&iecy;.
+     </p>
+    </article>
+    <article class="card">
+     <div class="symbol">
+      &asymp;
+     </div>
+     <h3>
+      &Rcy;&ycy;&bcy;&ncy;&acy;&yacy; &lcy;&acy;&vcy;&kcy;&acy; &icy; &kcy;&ocy;&pcy;&chcy;&iecy;&ncy;&icy;&iecy;
+     </h3>
+     <p>
+      &Rcy;&ycy;&bcy;&ncy;&acy;&yacy; &pcy;&rcy;&ocy;&dcy;&ucy;&kcy;&tscy;&icy;&yacy; &icy; &kcy;&ocy;&pcy;&chcy;&iocy;&ncy;&ycy;&iecy; &dcy;&iecy;&lcy;&icy;&kcy;&acy;&tcy;&iecy;&scy;&ycy; &mdash; &rcy;&iecy;&mcy;&iecy;&scy;&lcy;&iecy;&ncy;&ncy;&ycy;&jcy; &pcy;&ocy;&dcy;&khcy;&ocy;&dcy; &icy; &vcy;&ycy;&rcy;&acy;&zcy;&icy;&tcy;&iecy;&lcy;&softcy;&ncy;&acy;&yacy; &gcy;&acy;&scy;&tcy;&rcy;&ocy;&ncy;&ocy;&mcy;&icy;&chcy;&iecy;&scy;&kcy;&acy;&yacy; &icy;&scy;&tcy;&ocy;&rcy;&icy;&yacy;.
+     </p>
+    </article>
+   </div>
+   <div class="foot">
+    &Ecy;&Kcy;&Ocy; &Dcy;&iecy;&rcy;&iecy;&vcy;&ncy;&yacy; &middot; &Gcy;&acy;&scy;&tcy;&rcy;&ocy;&ncy;&ocy;&mcy;&icy;&yacy; &icy; &tcy;&ocy;&rcy;&gcy;&ocy;&vcy;&lcy;&yacy;
+   </div>
+  </section>
+  <section class="pond" data-title="&Pcy;&rcy;&ucy;&dcy;" id="water">
+   <div class="count">
+    04 / 06
+   </div>
+   <div class="grid2">
+    <div>
+     <div class="eyebrow">
+      &Pcy;&rcy;&icy;&rcy;&ocy;&dcy;&ncy;&ocy;&iecy; &scy;&iecy;&rcy;&dcy;&tscy;&iecy; &tcy;&iecy;&rcy;&rcy;&icy;&tcy;&ocy;&rcy;&icy;&icy;
+     </div>
+     <h2>
+      &Bcy;&ocy;&lcy;&softcy;&shcy;&ocy;&jcy; &pcy;&rcy;&ucy;&dcy;.
+      <br/>
+      <span class="serif">
+       &ZHcy;&icy;&vcy;&acy;&yacy; &vcy;&ocy;&dcy;&acy;.
+      </span>
+     </h2>
+     <p>
+      &Pcy;&rcy;&ocy;&scy;&tcy;&ocy;&rcy;&ncy;&ycy;&jcy; &pcy;&rcy;&ucy;&dcy; &scy; &rcy;&ycy;&bcy;&ocy;&jcy; &mdash; &ocy;&dcy;&ncy;&acy; &icy;&zcy; &kcy;&lcy;&yucy;&chcy;&iecy;&vcy;&ycy;&khcy; &ocy;&scy;&ocy;&bcy;&iecy;&ncy;&ncy;&ocy;&scy;&tcy;&iecy;&jcy; &Ecy;&Kcy;&Ocy; &Dcy;&iecy;&rcy;&iecy;&vcy;&ncy;&icy;. &Vcy;&ocy;&dcy;&acy;, &zcy;&iecy;&lcy;&iocy;&ncy;&ycy;&iecy; &bcy;&iecy;&rcy;&iecy;&gcy;&acy; &icy; &ocy;&tcy;&kcy;&rcy;&ycy;&tcy;&ycy;&iecy; &vcy;&icy;&dcy;&ycy; &scy;&ocy;&zcy;&dcy;&acy;&yucy;&tcy; &ocy;&scy;&ocy;&bcy;&ucy;&yucy; &acy;&tcy;&mcy;&ocy;&scy;&fcy;&iecy;&rcy;&ucy;, &acy; &rcy;&ycy;&bcy;&ncy;&acy;&yacy; &tcy;&iecy;&mcy;&acy; &dcy;&ocy;&pcy;&ocy;&lcy;&ncy;&yacy;&iecy;&tcy; &lcy;&ocy;&kcy;&acy;&lcy;&softcy;&ncy;&ucy;&yucy; &gcy;&acy;&scy;&tcy;&rcy;&ocy;&ncy;&ocy;&mcy;&icy;&yucy; &icy; &kcy;&ocy;&pcy;&chcy;&iecy;&ncy;&icy;&iecy;.
+     </p>
+     <p>
+      &Mcy;&iecy;&scy;&tcy;&ocy; &dcy;&lcy;&yacy; &scy;&ocy;&zcy;&iecy;&rcy;&tscy;&acy;&ncy;&icy;&yacy;, &ncy;&iecy;&scy;&pcy;&iecy;&shcy;&ncy;&ycy;&khcy; &pcy;&rcy;&ocy;&gcy;&ucy;&lcy;&ocy;&kcy; &icy; &ocy;&shchcy;&ucy;&shchcy;&iecy;&ncy;&icy;&yacy; &scy;&vcy;&yacy;&zcy;&icy; &scy; &pcy;&rcy;&icy;&rcy;&ocy;&dcy;&ocy;&jcy; &vcy; &lcy;&yucy;&bcy;&ocy;&iecy; &vcy;&rcy;&iecy;&mcy;&yacy; &gcy;&ocy;&dcy;&acy;.
+     </p>
+    </div>
+    <div class="video-box video-portrait">
+     <video autoplay muted loop playsinline controls preload="metadata" aria-label="Видео ЭКО Деревня — природа и пруд">
+      <source src="video12.mp4" type="video/mp4">
+      Ваш браузер не поддерживает воспроизведение видео.
+     </video>
+     <div class="placeholder"><strong>Видео природы</strong>Проверьте, что файл video12.mp4 загружен рядом с index.html.</div>
+    </div>
+   </div>
+   <div class="foot">
+    &Ecy;&Kcy;&Ocy; &Dcy;&iecy;&rcy;&iecy;&vcy;&ncy;&yacy; &middot; &Vcy;&ocy;&dcy;&acy; &icy; &pcy;&rcy;&icy;&rcy;&ocy;&dcy;&acy;
+   </div>
+  </section>
+  <section class="walk" data-title="&Pcy;&rcy;&ocy;&gcy;&ucy;&lcy;&kcy;&icy;" id="walks">
+   <div class="count">
+    05 / 06
+   </div>
+   <div class="grid2">
+    <div>
+     <div class="eyebrow">
+      &Pcy;&rcy;&ocy;&scy;&tcy;&rcy;&acy;&ncy;&scy;&tcy;&vcy;&ocy; &dcy;&lcy;&yacy; &scy;&iecy;&bcy;&yacy;
+     </div>
+     <h2>
+      &Icy;&dcy;&tcy;&icy; &dcy;&acy;&lcy;&softcy;&shcy;&iecy;.
+      <br/>
+      <span class="serif">
+       &Dcy;&ycy;&shcy;&acy;&tcy;&softcy; &gcy;&lcy;&ucy;&bcy;&zhcy;&iecy;.
+      </span>
+     </h2>
+     <p>
+      &Bcy;&ocy;&lcy;&softcy;&shcy;&acy;&yacy; &tcy;&iecy;&rcy;&rcy;&icy;&tcy;&ocy;&rcy;&icy;&yacy; &pcy;&rcy;&icy;&gcy;&lcy;&acy;&shcy;&acy;&iecy;&tcy; &kcy; &pcy;&iecy;&shcy;&icy;&mcy; &pcy;&rcy;&ocy;&gcy;&ucy;&lcy;&kcy;&acy;&mcy; &mdash; &bcy;&iecy;&zcy; &gcy;&ocy;&rcy;&ocy;&dcy;&scy;&kcy;&ocy;&gcy;&ocy; &shcy;&ucy;&mcy;&acy; &icy; &pcy;&ocy;&scy;&tcy;&ocy;&yacy;&ncy;&ncy;&ocy;&jcy; &scy;&pcy;&iecy;&shcy;&kcy;&icy;. &Zcy;&dcy;&iecy;&scy;&softcy; &mcy;&ocy;&zhcy;&ncy;&ocy; &pcy;&rcy;&ocy;&vcy;&ocy;&dcy;&icy;&tcy;&softcy; &bcy;&ocy;&lcy;&softcy;&shcy;&iecy; &vcy;&rcy;&iecy;&mcy;&iecy;&ncy;&icy; &ncy;&acy; &scy;&vcy;&iecy;&zhcy;&iecy;&mcy; &vcy;&ocy;&zcy;&dcy;&ucy;&khcy;&iecy;, &ncy;&acy;&bcy;&lcy;&yucy;&dcy;&acy;&tcy;&softcy; &zcy;&acy; &scy;&mcy;&iecy;&ncy;&ocy;&jcy; &scy;&iecy;&zcy;&ocy;&ncy;&ocy;&vcy; &icy; &ncy;&acy;&khcy;&ocy;&dcy;&icy;&tcy;&softcy; &lcy;&yucy;&bcy;&icy;&mcy;&ycy;&iecy; &mcy;&acy;&rcy;&shcy;&rcy;&ucy;&tcy;&ycy;.
+     </p>
+     <div class="stats">
+      <div class="stat">
+       <b>
+        &YAcy;&gcy;&ocy;&dcy;&ycy;
+       </b>
+       <span>
+        &Scy;&iecy;&zcy;&ocy;&ncy;&ncy;&ycy;&iecy; &pcy;&rcy;&icy;&rcy;&ocy;&dcy;&ncy;&ycy;&iecy; &vcy;&kcy;&ucy;&scy;&ycy;
+       </span>
+      </div>
+      <div class="stat">
+       <b>
+        &Tcy;&icy;&shcy;&icy;&ncy;&acy;
+       </b>
+       <span>
+        &Kcy;&rcy;&acy;&scy;&icy;&vcy;&ocy;&iecy; &ocy;&kcy;&rcy;&ucy;&zhcy;&iecy;&ncy;&icy;&iecy; &icy; &scy;&pcy;&ocy;&kcy;&ocy;&jcy;&ncy;&ycy;&jcy; &tcy;&iecy;&mcy;&pcy;
+       </span>
+      </div>
+      <div class="stat">
+       <b>
+        &Mcy;&acy;&rcy;&shcy;&rcy;&ucy;&tcy;&ycy;
+       </b>
+       <span>
+        &Mcy;&iecy;&scy;&tcy;&ocy; &dcy;&lcy;&yacy; &pcy;&rcy;&ocy;&gcy;&ucy;&lcy;&ocy;&kcy; &icy; &ocy;&tcy;&kcy;&rcy;&ycy;&tcy;&icy;&jcy;
+       </span>
+      </div>
+     </div>
+    </div>
+    <div class="visual">
+     <label>
+      &Pcy;&rcy;&ocy;&gcy;&ucy;&lcy;&kcy;&icy; &scy;&rcy;&iecy;&dcy;&icy; &zcy;&iecy;&lcy;&iecy;&ncy;&icy; &middot; &Scy;&iecy;&zcy;&ocy;&ncy;&ncy;&ycy;&iecy; &yacy;&gcy;&ocy;&dcy;&ycy;
+     </label>
+    </div>
+   </div>
+   <div class="foot">
+    &Ecy;&Kcy;&Ocy; &Dcy;&iecy;&rcy;&iecy;&vcy;&ncy;&yacy; &middot; &Pcy;&rcy;&icy;&rcy;&ocy;&dcy;&ncy;&ocy;&iecy; &pcy;&rcy;&ocy;&scy;&tcy;&rcy;&acy;&ncy;&scy;&tcy;&vcy;&ocy;
+   </div>
+  </section>
+  <section class="model" data-title="3D-&mcy;&ocy;&dcy;&iecy;&lcy;&softcy;" id="model">
+   <div class="count">
+    06 / 06
+   </div>
+   <div class="modelgrid">
+    <div>
+     <div class="eyebrow">
+      &Pcy;&lcy;&acy;&ncy; &tcy;&iecy;&rcy;&rcy;&icy;&tcy;&ocy;&rcy;&icy;&icy;
+     </div>
+     <h2>
+      &Pcy;&ocy;&scy;&mcy;&ocy;&tcy;&rcy;&icy;&tcy;&iecy;
+      <br/>
+      <span class="serif">
+       &ncy;&acy; &dcy;&iecy;&rcy;&iecy;&vcy;&ncy;&yucy;
+      </span>
+     </h2>
+     <p>
+      &Icy;&ncy;&tcy;&iecy;&rcy;&acy;&kcy;&tcy;&icy;&vcy;&ncy;&acy;&yacy; &zcy;&acy;&gcy;&lcy;&ucy;&shcy;&kcy;&acy; 3D-&mcy;&ocy;&dcy;&iecy;&lcy;&icy;. &Pcy;&ocy;&tcy;&yacy;&ncy;&icy;&tcy;&iecy; &mcy;&ocy;&dcy;&iecy;&lcy;&softcy; &mcy;&ycy;&shcy;&softcy;&yucy; &icy;&lcy;&icy; &pcy;&acy;&lcy;&softcy;&tscy;&iecy;&mcy;, &chcy;&tcy;&ocy;&bcy;&ycy; &pcy;&ocy;&vcy;&iecy;&rcy;&ncy;&ucy;&tcy;&softcy; &iecy;&iocy;. &Pcy;&ocy;&zcy;&zhcy;&iecy; &ecy;&tcy;&ocy;&tcy; &bcy;&lcy;&ocy;&kcy; &mcy;&ocy;&zhcy;&ncy;&ocy; &zcy;&acy;&mcy;&iecy;&ncy;&icy;&tcy;&softcy; &ncy;&acy; &vcy;&acy;&shcy;&ucy; 3D-&mcy;&ocy;&dcy;&iecy;&lcy;&softcy; (&ncy;&acy;&pcy;&rcy;&icy;&mcy;&iecy;&rcy;, GLB/glTF &icy;&lcy;&icy; &vcy;&scy;&tcy;&rcy;&acy;&icy;&vcy;&acy;&iecy;&mcy;&ycy;&jcy; 3D-&vcy;&softcy;&yucy;&iecy;&rcy;).
+     </p>
+     <div class="controls">
+      <button class="btn" id="left">
+       &curvearrowleft; &Pcy;&ocy;&vcy;&iecy;&rcy;&ncy;&ucy;&tcy;&softcy;
+      </button>
+      <button class="btn" id="right">
+       &Pcy;&ocy;&vcy;&iecy;&rcy;&ncy;&ucy;&tcy;&softcy; &curvearrowright;
+      </button>
+      <button class="btn" id="reset">
+       &Scy;&bcy;&rcy;&ocy;&scy;&icy;&tcy;&softcy; &vcy;&icy;&dcy;
+      </button>
+     </div>
+     <p class="note">
+      &Scy;&khcy;&iecy;&mcy;&acy;&tcy;&icy;&chcy;&ncy;&acy;&yacy; &icy;&lcy;&lcy;&yucy;&scy;&tcy;&rcy;&acy;&tscy;&icy;&yacy;, &ncy;&iecy; &tcy;&ocy;&chcy;&ncy;&ycy;&jcy; &gcy;&iecy;&ncy;&pcy;&lcy;&acy;&ncy; &ocy;&bcy;&hardcy;&iecy;&kcy;&tcy;&acy;.
+     </p>
+    </div>
+    <div class="stage" id="stage">
+     <div class="hint">
+      &Pcy;&ocy;&tcy;&yacy;&ncy;&icy;&tcy;&iecy;, &chcy;&tcy;&ocy;&bcy;&ycy; &vcy;&rcy;&acy;&shchcy;&acy;&tcy;&softcy; &middot; &Zcy;&acy;&gcy;&lcy;&ucy;&shcy;&kcy;&acy; 3D
+     </div>
+     <div class="village" id="village">
+      <div class="land">
+      </div>
+      <div class="road">
+      </div>
+      <div class="road v">
+      </div>
+      <div class="water">
+      </div>
+      <div class="house a">
+      </div>
+      <div class="house b">
+      </div>
+      <div class="house c">
+      </div>
+      <div class="house d">
+      </div>
+      <div class="house e">
+      </div>
+      <div class="house f">
+      </div>
+      <div class="tree t1">
+      </div>
+      <div class="tree t2">
+      </div>
+      <div class="tree t3">
+      </div>
+      <div class="tree t4">
+      </div>
+      <div class="tree t5">
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="foot">
+    &Ecy;&Kcy;&Ocy; &Dcy;&iecy;&rcy;&iecy;&vcy;&ncy;&yacy; &middot; 3D-&pcy;&rcy;&iecy;&zcy;&iecy;&ncy;&tcy;&acy;&tscy;&icy;&yacy; &tcy;&iecy;&rcy;&rcy;&icy;&tcy;&ocy;&rcy;&icy;&icy;
+   </div>
+  </section>
+  <script>
+   (()=>{const s=[...document.querySelectorAll('body>section')],nav=document.querySelector('#dots');
+  let cur=0;
+  s.forEach((el,i)=>{let b=document.createElement('button');
+  b.title=el.dataset.title;
+  b.setAttribute('aria-label','Раздел '+(i+1)+': '+el.dataset.title);
+  b.onclick=()=>el.scrollIntoView({behavior:'smooth'});
+  nav.append(b)});
+  const dots=[...nav.children];
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting&&e.intersectionRatio>.55){cur=s.indexOf(e.target);
+  dots.forEach((d,i)=>d.classList.toggle('active',i===cur))}}),{threshold:[.55,.7]});
+  s.forEach(x=>io.observe(x));
+  document.querySelector('#up').onclick=()=>s[Math.max(0,cur-1)].scrollIntoView({behavior:'smooth'});
+  document.querySelector('#down').onclick=()=>s[Math.min(s.length-1,cur+1)].scrollIntoView({behavior:'smooth'});
+  document.querySelectorAll('.video-box').forEach(box=>{let v=box.querySelector('video'),ph=box.querySelector('.placeholder');
+  v.addEventListener('loadedmetadata',()=>ph.style.display='none');
+  v.addEventListener('error',()=>ph.style.display='grid')});
+  let rot=-35,drag=false,startX=0,startRot=rot,stage=document.querySelector('#stage'),village=document.querySelector('#village');
+  function draw(){village.style.transform=`translate(-50%,-50%) rotateX(58deg) rotateZ(${rot}deg)`}stage.addEventListener('pointerdown',e=>{drag=true;
+  startX=e.clientX;
+  startRot=rot;
+  stage.setPointerCapture(e.pointerId)});
+  stage.addEventListener('pointermove',e=>{if(drag){rot=startRot+(e.clientX-startX)*.55;
+  draw()}});
+  stage.addEventListener('pointerup',()=>drag=false);
+  stage.addEventListener('pointercancel',()=>drag=false);
+  document.querySelector('#left').onclick=()=>{rot-=18;
+  draw()};
+  document.querySelector('#right').onclick=()=>{rot+=18;
+  draw()};
+  document.querySelector('#reset').onclick=()=>{rot=-35;
+  draw()};
+  // Motion system: reveal on entry, stagger grouped elements, subtle scroll parallax.
+  const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealTargets=[];
+  s.forEach((section,index)=>{
+    const direct=[...section.children].filter(el=>!el.classList.contains('count')&&!el.classList.contains('foot'));
+    direct.forEach((el,i)=>{
+      if(index===0){ el.classList.add('hero-intro'); el.style.setProperty('--intro-delay',(i*110)+'ms'); }
+      else { el.classList.add('reveal'); el.style.setProperty('--reveal-delay',(i*90)+'ms'); revealTargets.push(el); }
+    });
+    section.querySelectorAll('.card,.stat').forEach((el,i)=>{
+      el.classList.add('reveal');
+      el.style.setProperty('--reveal-delay',(i*105)+'ms');
+      revealTargets.push(el);
+    });
+  });
+  if(!reduceMotion){
+    document.documentElement.classList.add('motion-ready');
+    const revealIO=new IntersectionObserver(entries=>entries.forEach(entry=>{
+      if(entry.isIntersecting){ entry.target.classList.add('is-visible'); revealIO.unobserve(entry.target); }
+    }),{threshold:.12,rootMargin:'0px 0px -5% 0px'});
+    revealTargets.forEach(el=>revealIO.observe(el));
+    const parallaxItems=[...document.querySelectorAll('.visual,.video-box')];
+    let ticking=false;
+    const updateParallax=()=>{
+      const vh=window.innerHeight||1;
+      parallaxItems.forEach(el=>{
+        const r=el.getBoundingClientRect();
+        if(r.bottom>-80 && r.top<vh+80){
+          const progress=(r.top+r.height/2-vh/2)/vh;
+          el.style.setProperty('--parallax-y',(Math.max(-10,Math.min(10,-progress*13))).toFixed(1)+'px');
+        }
+      });
+      ticking=false;
+    };
+    window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(updateParallax)}},{passive:true});
+    window.addEventListener('resize',updateParallax,{passive:true});
+    updateParallax();
+  }
+  })();;
+  </script>
+ </body>
+</html>

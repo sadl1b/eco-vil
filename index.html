@@ -642,6 +642,18 @@ linear-gradient(160deg,
 
 }
 
+
+/* Sequential slide-entry animation for benefit text blocks */
+@keyframes benefitFloatIn {
+  0% { opacity: 0; transform: translate3d(0, 30px, 0); filter: blur(3px); }
+  65% { opacity: 1; filter: blur(0); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); filter: blur(0); }
+}
+html.motion-ready .stat.slide-stagger { opacity: 0; transform: translate3d(0, 30px, 0); }
+html.motion-ready .stat.slide-stagger.is-entering { animation: benefitFloatIn .9s cubic-bezier(.2,.7,.2,1) both; animation-delay: var(--benefit-delay, 0ms); }
+@media (max-width:760px) { html.motion-ready .stat.slide-stagger.is-entering { animation-duration: .72s; } }
+@media (prefers-reduced-motion: reduce) { html.motion-ready .stat.slide-stagger, html.motion-ready .stat.slide-stagger.is-entering { opacity:1 !important; transform:none !important; filter:none !important; animation:none !important; } }
+
 /* Premium motion layer: reveal, stagger, hover and restrained parallax */
 html { scroll-padding-top: 18px; }
 .btn, .card, .visual, .video-box, #dots button, #arrows button {
@@ -689,6 +701,7 @@ html.motion-ready .hero .hero-intro {
 }
 
   </style>
+  Видео для слайдов 2 и 4: video1.mp4 и video12.mp4 должны лежать рядом с index.html.
  </head>
  <body>
   <nav aria-label="&Ncy;&acy;&vcy;&icy;&gcy;&acy;&tscy;&icy;&yacy; &pcy;&ocy; &rcy;&acy;&zcy;&dcy;&iecy;&lcy;&acy;&mcy;" id="dots">
@@ -778,7 +791,7 @@ html.motion-ready .hero .hero-intro {
     </div>
     <div class="video-box video-portrait">
      <video autoplay muted loop playsinline controls preload="metadata" aria-label="Видео ЭКО Деревня — концепция">
-      <source src="video2.mp4" type="video/mp4">
+      <source src="video1.mp4" type="video/mp4">
       Ваш браузер не поддерживает воспроизведение видео.
      </video>
      <div class="placeholder"><strong>Видео концепции</strong>Проверьте, что файл video1.mp4 загружен рядом с index.html.</div>
@@ -1058,6 +1071,29 @@ html.motion-ready .hero .hero-intro {
       revealTargets.push(el);
     });
   });
+  // Replay benefit/stat text blocks in sequence every time their slide becomes active.
+  const benefitGroups=[...document.querySelectorAll('section')].map(section=>({
+    section, items:[...section.querySelectorAll('.stat')]
+  })).filter(group=>group.items.length);
+  benefitGroups.forEach(group=>group.items.forEach((el,i)=>{
+    el.classList.add('slide-stagger');
+    el.style.setProperty('--benefit-delay',(i*260)+'ms');
+  }));
+  if(!reduceMotion && benefitGroups.length){
+    const benefitIO=new IntersectionObserver(entries=>entries.forEach(entry=>{
+      if(!entry.isIntersecting || entry.intersectionRatio<.55) return;
+      const group=benefitGroups.find(item=>item.section===entry.target);
+      if(!group) return;
+      group.items.forEach((el,i)=>{
+        el.classList.remove('is-entering');
+        void el.offsetWidth; // restart animation on every slide entry
+        el.style.setProperty('--benefit-delay',(i*260)+'ms');
+        el.classList.add('is-entering');
+      });
+    }),{threshold:[.55,.7]});
+    benefitGroups.forEach(group=>benefitIO.observe(group.section));
+  }
+
   if(!reduceMotion){
     document.documentElement.classList.add('motion-ready');
     const revealIO=new IntersectionObserver(entries=>entries.forEach(entry=>{
