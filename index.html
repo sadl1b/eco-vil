@@ -508,6 +508,11 @@ linear-gradient(160deg,
   cursor:pointer
 }
 @media(max-width:760px) {
+  .video-portrait {
+    width:min(72vw, 300px);
+    height:min(52vh, 480px);
+    min-height:240px;
+  }
   section {
   padding:65px 24px 55px
 }
@@ -637,7 +642,7 @@ linear-gradient(160deg,
 
 }
   </style>
-  Local media files (optional): place video1.mp4 and video12.mp4 beside index.html, then use relative paths in &lt;source src="video1.mp4"&gt;.
+  Видео для слайдов 2 и 4: video1.mp4 и video12.mp4 должны лежать рядом с index.html.
  </head>
  <body>
   <nav aria-label="&Ncy;&acy;&vcy;&icy;&gcy;&acy;&tscy;&icy;&yacy; &pcy;&ocy; &rcy;&acy;&zcy;&dcy;&iecy;&lcy;&acy;&mcy;" id="dots">
@@ -725,10 +730,12 @@ linear-gradient(160deg,
       </div>
      </div>
     </div>
-    <div class="visual">
-     <label>
-      &Pcy;&rcy;&icy;&rcy;&ocy;&dcy;&acy; &middot; &Pcy;&rcy;&ocy;&scy;&tcy;&rcy;&acy;&ncy;&scy;&tcy;&vcy;&ocy; &middot; &Scy;&vcy;&ocy;&jcy; &pcy;&rcy;&ocy;&dcy;&ucy;&kcy;&tcy;
-     </label>
+    <div class="video-box video-portrait">
+     <video autoplay muted loop playsinline controls preload="metadata" aria-label="Видео ЭКО Деревня — концепция">
+      <source src="video1.mp4" type="video/mp4">
+      Ваш браузер не поддерживает воспроизведение видео.
+     </video>
+     <div class="placeholder"><strong>Видео концепции</strong>Проверьте, что файл video1.mp4 загружен рядом с index.html.</div>
     </div>
    </div>
    <div class="foot">
@@ -814,10 +821,12 @@ linear-gradient(160deg,
       &Mcy;&iecy;&scy;&tcy;&ocy; &dcy;&lcy;&yacy; &scy;&ocy;&zcy;&iecy;&rcy;&tscy;&acy;&ncy;&icy;&yacy;, &ncy;&iecy;&scy;&pcy;&iecy;&shcy;&ncy;&ycy;&khcy; &pcy;&rcy;&ocy;&gcy;&ucy;&lcy;&ocy;&kcy; &icy; &ocy;&shchcy;&ucy;&shchcy;&iecy;&ncy;&icy;&yacy; &scy;&vcy;&yacy;&zcy;&icy; &scy; &pcy;&rcy;&icy;&rcy;&ocy;&dcy;&ocy;&jcy; &vcy; &lcy;&yucy;&bcy;&ocy;&iecy; &vcy;&rcy;&iecy;&mcy;&yacy; &gcy;&ocy;&dcy;&acy;.
      </p>
     </div>
-    <div class="pond-art">
-     <span>
-      &Bcy;&ocy;&lcy;&softcy;&shcy;&ocy;&jcy; &pcy;&rcy;&ucy;&dcy; &scy; &rcy;&ycy;&bcy;&ocy;&jcy; &middot; &Pcy;&rcy;&icy;&rcy;&ocy;&dcy;&ncy;&ycy;&jcy; &lcy;&acy;&ncy;&dcy;&shcy;&acy;&fcy;&tcy;
-     </span>
+    <div class="video-box video-portrait">
+     <video autoplay muted loop playsinline controls preload="metadata" aria-label="Видео ЭКО Деревня — природа и пруд">
+      <source src="video12.mp4" type="video/mp4">
+      Ваш браузер не поддерживает воспроизведение видео.
+     </video>
+     <div class="placeholder"><strong>Видео природы</strong>Проверьте, что файл video12.mp4 загружен рядом с index.html.</div>
     </div>
    </div>
    <div class="foot">
