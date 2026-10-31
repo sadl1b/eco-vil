@@ -700,6 +700,340 @@ html.motion-ready .hero .hero-intro {
   .visual, .video-box video { transform:none !important; }
 }
 
+
+/* Полноценная мобильная адаптация */
+@media (max-width: 760px) {
+  html {
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 0;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  section {
+    width: 100%;
+    min-height: 100svh;
+    height: auto;
+    padding: 76px 20px 72px;
+    justify-content: flex-start;
+    gap: 16px;
+    overflow: clip;
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+  }
+
+  h1 {
+    font-size: clamp(3.35rem, 16vw, 5.5rem);
+    line-height: .88;
+    margin: 10px 0 14px;
+    overflow-wrap: anywhere;
+  }
+
+  h2 {
+    font-size: clamp(2.25rem, 10.5vw, 3.6rem);
+    line-height: .98;
+    margin: 8px 0 14px;
+    letter-spacing: -.045em;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    line-height: 1.25;
+  }
+
+  p,
+  .hero .lead {
+    font-size: 1rem;
+    line-height: 1.58;
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .eyebrow {
+    font-size: .64rem;
+    line-height: 1.5;
+    letter-spacing: .15em;
+  }
+
+  .count {
+    top: 24px;
+    right: 20px;
+    font-size: .66rem;
+  }
+
+  .foot {
+    display: none;
+  }
+
+  .hero {
+    justify-content: center;
+    padding-top: 58px;
+    padding-bottom: 58px;
+  }
+
+  .hero .lead {
+    max-width: 34rem;
+  }
+
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    width: 100%;
+    margin-top: 18px;
+  }
+
+  .btn {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 18px;
+    text-align: center;
+    font-size: .92rem;
+  }
+
+  .grid2,
+  .modelgrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .grid2 > *,
+  .modelgrid > * {
+    min-width: 0;
+  }
+
+  .grid2 .video-box,
+  .grid2 .visual {
+    width: min(100%, 390px);
+    margin: 2px auto 0;
+  }
+
+  .video-portrait {
+    height: min(54svh, 480px);
+    min-height: 250px;
+    max-height: 480px;
+    aspect-ratio: 9 / 16;
+    border-radius: 14px;
+  }
+
+  .video-box video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .visual {
+    height: min(38svh, 330px);
+    min-height: 220px;
+    border-radius: 14px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 18px;
+  }
+
+  .stat {
+    padding: 13px 0 12px;
+    border-top: 1px solid #80927c88;
+  }
+
+  .stat b {
+    font-size: 1.28rem;
+    margin-bottom: 4px;
+  }
+
+  .stat span {
+    display: block;
+    font-size: .9rem;
+    line-height: 1.45;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .card {
+    min-height: 0;
+    padding: 18px 18px 16px;
+    border-radius: 12px;
+  }
+
+  .card .symbol {
+    font-size: 1.45rem;
+  }
+
+  .card p {
+    font-size: .92rem;
+    line-height: 1.5;
+    margin: 8px 0 0;
+  }
+
+  .pond-art {
+    height: 34svh;
+    min-height: 220px;
+    border-radius: 14px;
+  }
+
+  #dots {
+    top: auto;
+    left: 50%;
+    right: auto;
+    bottom: 15px;
+    transform: translateX(-50%);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    padding: 10px 14px;
+    border: 1px solid #ffffff24;
+    border-radius: 30px;
+    background: #101c15d9;
+    backdrop-filter: blur(12px);
+  }
+
+  #dots button {
+    width: 7px;
+    height: 7px;
+    min-width: 7px;
+    min-height: 7px;
+    border: 1px solid #ffffffb0;
+  }
+
+  #arrows {
+    right: 12px;
+    bottom: 13px;
+    flex-direction: row;
+    gap: 6px;
+  }
+
+  #arrows button {
+    width: 34px;
+    height: 34px;
+    background: #101c15e8;
+    backdrop-filter: blur(10px);
+  }
+
+  /* Большая и удобная для касания область 3D-карты */
+  .model {
+    min-height: 100svh;
+    padding: 62px 14px 58px;
+    gap: 10px;
+  }
+
+  .model .modelgrid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: auto;
+  }
+
+  .model .modelgrid > div:first-child {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .model .modelgrid h2 {
+    font-size: clamp(1.9rem, 9vw, 2.6rem);
+    line-height: .98;
+  }
+
+  .model .modelgrid p {
+    font-size: .82rem;
+    line-height: 1.4;
+  }
+
+  .model .modelgrid .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .model .modelgrid .controls .btn {
+    flex: 1 1 auto;
+    min-height: 42px;
+    padding: 10px 12px;
+  }
+
+  .model .stage {
+    width: 100%;
+    height: min(58svh, 540px);
+    min-height: 330px;
+    max-height: none;
+    border-radius: 14px;
+    touch-action: pan-y;
+  }
+
+  .model .village {
+    transform: translate(-50%, -50%) scale(.78) rotateX(58deg) rotateZ(-35deg);
+    transform-origin: center;
+  }
+
+  .model .foot {
+    display: none;
+  }
+}
+
+@media (max-width: 390px) {
+  section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  h1 {
+    font-size: clamp(3.1rem, 15.5vw, 4.4rem);
+  }
+
+  .video-portrait {
+    height: min(50svh, 420px);
+  }
+
+  .model .stage {
+    min-height: 300px;
+  }
+
+  .model .village {
+    transform: translate(-50%, -50%) scale(.68) rotateX(58deg) rotateZ(-35deg);
+  }
+}
+
+@media (max-height: 700px) and (max-width: 760px) {
+  section {
+    padding-top: 58px;
+    padding-bottom: 58px;
+  }
+
+  .hero {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .video-portrait {
+    height: 48svh;
+    min-height: 210px;
+  }
+
+  .model .stage {
+    height: 52svh;
+    min-height: 270px;
+  }
+}
+
   </style>
  </head>
  <body>
@@ -789,11 +1123,10 @@ html.motion-ready .hero .hero-intro {
      </div>
     </div>
     <div class="video-box video-portrait">
-     <video autoplay muted loop playsinline controls preload="metadata" aria-label="Видео ЭКО Деревня — концепция">
-      <source src="video2.mp4" type="video/mp4">
+     <video autoplay muted loop playsinline webkit-playsinline preload="none" disablepictureinpicture controlslist="nodownload noplaybackrate noremoteplayback" aria-label="Видео ЭКО Деревня — концепция">
+      <source data-src="video2.mp4" type="video/mp4">
       Ваш браузер не поддерживает воспроизведение видео.
      </video>
-     <div class="placeholder"><strong>Видео концепции</strong>Проверьте, что файл video1.mp4 загружен рядом с index.html.</div>
     </div>
    </div>
    <div class="foot">
@@ -880,11 +1213,10 @@ html.motion-ready .hero .hero-intro {
      </p>
     </div>
     <div class="video-box video-portrait">
-     <video autoplay muted loop playsinline controls preload="metadata" aria-label="Видео ЭКО Деревня — природа и пруд">
-      <source src="video12.mp4" type="video/mp4">
+     <video autoplay muted loop playsinline webkit-playsinline preload="none" disablepictureinpicture controlslist="nodownload noplaybackrate noremoteplayback" aria-label="Видео ЭКО Деревня — природа и пруд">
+      <source data-src="video12.mp4" type="video/mp4">
       Ваш браузер не поддерживает воспроизведение видео.
      </video>
-     <div class="placeholder"><strong>Видео природы</strong>Проверьте, что файл video12.mp4 загружен рядом с index.html.</div>
     </div>
    </div>
    <div class="foot">
@@ -1037,9 +1369,27 @@ html.motion-ready .hero .hero-intro {
   s.forEach(x=>io.observe(x));
   document.querySelector('#up').onclick=()=>s[Math.max(0,cur-1)].scrollIntoView({behavior:'smooth'});
   document.querySelector('#down').onclick=()=>s[Math.min(s.length-1,cur+1)].scrollIntoView({behavior:'smooth'});
-  document.querySelectorAll('.video-box').forEach(box=>{let v=box.querySelector('video'),ph=box.querySelector('.placeholder');
-  v.addEventListener('loadedmetadata',()=>ph.style.display='none');
-  v.addEventListener('error',()=>ph.style.display='grid')});
+  // Видео загружаются только когда раздел приближается к экрану. Это не заставляет браузер скачивать оба ролика сразу.
+  const videos=[...document.querySelectorAll('.video-box video')];
+  const loadAndPlay=video=>{
+    const source=video.querySelector('source[data-src]');
+    if(source && !source.src){ source.src=source.dataset.src; video.load(); }
+    video.muted=true; video.defaultMuted=true; video.playsInline=true;
+    video.setAttribute('muted',''); video.setAttribute('playsinline',''); video.setAttribute('webkit-playsinline','');
+    const play=()=>{const result=video.play(); if(result && typeof result.catch==='function') result.catch(()=>{});};
+    if(video.readyState>=2) play();
+    else video.addEventListener('canplay',play,{once:true});
+  };
+  videos.forEach(video=>{video.removeAttribute('controls'); video.controls=false;});
+  if('IntersectionObserver' in window){
+    const videoIO=new IntersectionObserver(entries=>entries.forEach(entry=>{
+      if(entry.isIntersecting){ loadAndPlay(entry.target); videoIO.unobserve(entry.target); }
+    }),{rootMargin:'300px 0px',threshold:0.01});
+    videos.forEach(video=>videoIO.observe(video));
+  } else { videos.forEach(loadAndPlay); }
+  document.addEventListener('visibilitychange',()=>{
+    if(!document.hidden) videos.forEach(video=>{if(video.currentSrc) loadAndPlay(video);});
+  });
   let rot=-35,drag=false,startX=0,startRot=rot,stage=document.querySelector('#stage'),village=document.querySelector('#village');
   function draw(){village.style.transform=`translate(-50%,-50%) rotateX(58deg) rotateZ(${rot}deg)`}stage.addEventListener('pointerdown',e=>{drag=true;
   startX=e.clientX;
